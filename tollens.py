@@ -1,16 +1,11 @@
-def inferencia_de_tollens(premisa1, premisa2, negacion_consecuencia):
-  antecedente1, consecuencia1 = premisa1.split()
-  antecedente2, consecuencia2 = premisa2.split()
-    
-  if consecuencia1 == negacion_consecuencia and antecedente1 == f"~{antecedente2}":
-    return f"Por inferencia de Tollens, ~{antecedente1} es verdadero."
-  else:
-      return "La inferencia de Tollens no es aplicable a estas premisas."
+# Premisas
+afirmacion_condicional = True # Si llueve, entonces la calle estará mojada
+consecuencia_negada = False   # La calle no está mojada
+# Inferencia Modus Tollens
+if afirmacion_condicional and not consecuencia_negada:
+    conclusion = "No está lloviendo"
+else:
+    conclusion = "La inferencia Modus Tollens no es válida"
 
-# Ejemplo de uso
-premisa1 = "0 1"
-premisa2 = "1 0"
-negacion_consecuencia = "0"
-
-resultado = inferencia_de_tollens(premisa1, premisa2, negacion_consecuencia)
-print(resultado)
+# Imprimir la conclusión
+print(conclusion)
